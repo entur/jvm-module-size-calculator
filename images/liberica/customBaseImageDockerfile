@@ -4,6 +4,12 @@ ARG MODULES
 # Create custom JRE
 RUN jlink --compress 2 --strip-java-debug-attributes --no-header-files --no-man-pages --add-modules ${MODULES} --output /jlink-runtime
 
+# remove the same as in the bellsoft/liberica-openjdk-alpine-musl:17 image, see
+# https://hub.docker.com/layers/bellsoft/liberica-openjdk-alpine-musl/17/images/sha256-6fb7239273ebe7bcd01a394e82c28bbe3d61a5671967e268d7b258aab5dcadd2?context=explore
+#
+RUN rm -rf /jlink-runtime/lib/minimal
+RUN rm -rf /jlink-runtime/lib/client
+
 FROM bellsoft/alpaquita-linux-base:stream-musl
 COPY --from=builder /jlink-runtime /jlink-runtime
 

@@ -21,3 +21,8 @@ echo
 echo "Built image $CUSTOM_IMAGE from customed jlink image $CUSTOM_BASE_IMAGE:"
 echo
 docker images | grep $1
+
+echo
+echo "Run the app using the command"
+echo "docker run -i -t $CUSTOM_IMAGE"
+
