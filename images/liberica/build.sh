@@ -13,9 +13,9 @@ CUSTOM_BASE_IMAGE=$1-base-image:$2
 
 mvn clean package
 
-./buildCustomBaseImage.sh "$CUSTOM_BASE_IMAGE"
+./customBaseImageDockerBuild.sh "$CUSTOM_BASE_IMAGE"
 
-./jlinkDockerBuild.sh "$CUSTOM_BASE_IMAGE" "$CUSTOM_IMAGE"
+./customAppImageDockerBuild.sh "$CUSTOM_BASE_IMAGE" "$CUSTOM_IMAGE"
 
 echo
 echo "Built image $CUSTOM_IMAGE from customed jlink image $CUSTOM_BASE_IMAGE:"

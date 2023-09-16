@@ -2,9 +2,9 @@
 set -e
 
 if [ "$#" -eq 0 ]; then
-  echo "Usage: ./buildCustomBaseImage.sh <Expected docker image tag argument>"
+  echo "Usage: ./customBaseImageDockerBuild.sh <Expected docker image tag argument>"
   echo
-  echo "Example: ./buildCustomBaseImage.sh myCustomBaseImage:1.0.0"
+  echo "Example: ./customBaseImageDockerBuild.sh myCustomBaseImage:1.0.0"
   exit 1
 fi
 
