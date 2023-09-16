@@ -1,0 +1,23 @@
+ARG CUSTOM_BASE_IMAGE
+
+FROM ${CUSTOM_BASE_IMAGE}
+
+# See https://wiki.alpinelinux.org/wiki/Upgrading_Alpine
+
+# Optionally also add:
+# RUN apk add fontconfig ttf-dejavu
+
+RUN apk update && apk upgrade --available
+
+RUN addgroup appuser && adduser --disabled-password appuser --ingroup appuser
+WORKDIR /home/appuser
+
+ADD target/*.jar app.jar
+
+EXPOSE 10001
+EXPOSE 8080
+EXPOSE 8081
+
+USER appuser
+
+CMD ["/jlink-runtime/bin/java", "-jar", "app.jar"]

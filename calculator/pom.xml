@@ -11,14 +11,38 @@
 		<maven.compiler.target>11</maven.compiler.target>
 	</properties>
 
+   <url>https://github.com/entur/jvm-module-size-calculator</url>
+    <organization>
+        <name>Entur AS</name>
+        <url>http://www.entur.org/</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>EUPL-1.2 with modifications</name>
+            <url>https://joinup.ec.europa.eu/software/page/eupl</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Thomas Rørvik Skjølberg</name>
+            <email>thomas.rorvik.skjolberg@entur.org</email>
+            <organization>Entur</organization>
+            <organizationUrl>http://www.entur.org</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:ssh://git@github.com/entur/jvm-module-size-calculator.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/entur/jvm-module-size-calculator.git</developerConnection>
+        <url>https://github.com/entur/jvm-module-size-calculator/tree/master</url>
+        <tag>HEAD</tag>
+    </scm>
+
   <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <!-- Here come other details
-        ...
-        -->
         <configuration>
           <archive>
             <manifest>
@@ -27,9 +51,6 @@
             </manifest>
           </archive>
         </configuration>
-        <!-- Here come other details
-        ...
-        -->
       </plugin>
     </plugins>
   </build>

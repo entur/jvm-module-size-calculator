@@ -1,0 +1,10 @@
+FROM bellsoft/liberica-runtime-container:jdk-all-17-musl as builder
+ARG MODULES
+
+# Create custom JRE
+RUN jlink --compress 2 --strip-java-debug-attributes --no-header-files --no-man-pages --add-modules ${MODULES} --output /jlink-runtime
+
+FROM bellsoft/alpaquita-linux-base:stream-musl
+COPY --from=builder /jlink-runtime /jlink-runtime
+
+CMD ["/jlink-runtime/bin/java"]

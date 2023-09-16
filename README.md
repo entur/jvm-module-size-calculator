@@ -1,14 +1,14 @@
 # jvm-module-size-calculator
-Project for calculating the size of modules within a JVM distribution.
+Utility project for calculating the size of modules within a JVM distribution.
 
-This will help you determine whether how much your JVM distribution can be reduced in size for a specific application.
-
-Obtain relevant modules with the help of `jdep`.
+This calculator will help you determine how much your JVM distribution (i.e. docker image) can be reduced in size for a specific application.
 
 # License
 [European Union Public Licence v1.2](https://eupl.eu/).
 
 # Usage
+
+## Calculator
 Build the Maven project, 
 
 ```
@@ -61,6 +61,15 @@ i.e.
 ```
 ./calculateModulesSize.sh bellsoft/liberica-runtime-container:jdk-all-17-musl "java.base,java.compiler,java.desktop,java.instrument,java.management,java.naming,java.net.http,java.prefs,java.rmi,java.scripting,java.security.jgss,java.security.sasl,java.sql,java.xml.crypto,jdk.httpserver,jdk.jfr,jdk.unsupported,jdk.xml.dom"
 ```
+
+# Example
+The project includes a [fully working example](images/liberica) for Liberica docker images with bash scripts:
+
+ * builds Spring Boot Maven project
+ * extracts the relevant modules using `jdeps`
+ * builds a custom base image using `jlink`
+ * builds a custom image with the Maven artifact 
+
 
 
 
