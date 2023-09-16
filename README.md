@@ -12,13 +12,14 @@ This calculator will help you determine how much your JVM distribution (i.e. doc
 Build the Maven project, 
 
 ```
+cd calculator
 mvn clean package
 ```
 
 then run 
 
 ```
-java -jar target/calculator-0.0.x-SNAPSHOT.jar
+java -jar target/calculator-0.0.1-SNAPSHOT.jar
 ```
 
 to see the module size within the currently installed JVM.
@@ -26,13 +27,13 @@ to see the module size within the currently installed JVM.
 Run
 
 ```
-java -jar target/calculator-0.0.x-SNAPSHOT.jar <comma-seperated-modules>
+java -jar target/calculator-0.0.1-SNAPSHOT.jar <comma-seperated-modules>
 ```
 
 i.e.
 
 ```
-java -jar target/calculator-0.0.x-SNAPSHOT.jar java.base,java.compiler,java.desktop
+java -jar target/calculator-0.0.1-SNAPSHOT.jar java.base,java.compiler,java.desktop
 ```
 
 to calculate the size of modules within the current JVM.
@@ -41,7 +42,7 @@ to calculate the size of modules within the current JVM.
 List module sizes using the script
 
 ```
-./printModuleSizes.sh  <docler-image> 
+./printModuleSizes.sh  <docker-image> 
 ```
 
 i.e.
@@ -53,7 +54,7 @@ i.e.
 or calculate specific module sizes using
 
 ```
-./calculateModulesSize.sh <docler-image> <comma-seperated-modules>
+./calculateModulesSize.sh <docker-image> <comma-seperated-modules>
 ```
 
 i.e.

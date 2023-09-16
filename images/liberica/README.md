@@ -1,5 +1,5 @@
 # liberica + Maven Spring example project
-Example project for creating a custom Liberica image for a Spring Boot Maven project.
+Example project for creating a custom Liberica image for a Spring Boot Maven project, with the help of `jdep` and `jlink`.
 
 Run
 
