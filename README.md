@@ -19,7 +19,7 @@ then run
 
 ```
 java -jar target/calculator-0.0.x-SNAPSHOT.jar
-``
+```
 
 to see the module size within the currently installed JVM.
 
@@ -35,7 +35,7 @@ i.e.
 java -jar target/calculator-0.0.x-SNAPSHOT.jar java.base,java.compiler,java.desktop
 ```
 
-to calculate the size of modules.
+to calculate the size of modules within the current JVM.
 
 ## Docker
 List module sizes using the script
