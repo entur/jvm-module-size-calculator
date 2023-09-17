@@ -20,4 +20,4 @@ EXPOSE 8081
 
 USER appuser
 
-CMD ["/jlink-runtime/bin/java", "-jar", "app.jar"]
+CMD ["java", "-jar", "app.jar"]

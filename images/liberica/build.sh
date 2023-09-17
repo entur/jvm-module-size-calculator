@@ -4,7 +4,7 @@ set -e
 if [ "$#" -eq 0 ]; then
   echo "Usage: ./build.sh <docker image name> <docker image version>"
   echo
-  echo "Example: ./build.sh myImage 1.0.0"
+  echo "Example: ./build.sh my-image 1.0.0"
   exit 1
 fi
 

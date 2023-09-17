@@ -11,6 +11,9 @@ RUN rm -rf /jlink-runtime/lib/minimal
 RUN rm -rf /jlink-runtime/lib/client
 
 FROM bellsoft/alpaquita-linux-base:stream-musl
-COPY --from=builder /jlink-runtime /jlink-runtime
+COPY --from=builder /jlink-runtime /usr/lib/jvm/jdk
 
-CMD ["/jlink-runtime/bin/java"]
+ENV JAVA_HOME=/usr/lib/jvm/jdk
+RUN ln -s /usr/lib/jvm/jdk/bin/java /usr/bin/java 
+
+CMD ["java"]
